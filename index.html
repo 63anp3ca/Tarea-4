@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+    <script src="https://d3js.org/d3-time.v1.min.js"></script>
+    <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+    <script src="https://d3js.org/d3-color.v1.min.js"></script>
+    <script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="main.js"></script>
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ </head>
+ <body>
+ <div class='container'>
+    <div class="page-header">
+      <h1>VISUAL ANALYTICS
+        <small>201820</small>
+        </h1>
+    </div>
+      <div class="col-md-9">
+        <h1 ALIGN=center><b>Hurto de Celulares en Colombia.</b></h1>
+        <p>Muestra el consolidado del hurto de celulares en Colombia a partir del año 2010  al 2018, discriminado por departamento.</p>
+        <p>Información extraída del portal POLICÍA NACIONAL DE COLOMBIA en el siguiente enlace: https://www.policia.gov.co/grupo-informaci%C3%B3n-criminalidad/estadistica-delictiva</p>
+
+        <img src="celular.jpg" alt="..">
+
+        <p>A pesar de la estrategia implementada por el Gobierno para contrarrestar el hurto de teléfonos celulares, este delito no da tregua y en los primeros cuatro meses del año se contabilizaron unos 424.000 equipos robados.</p>
+
+        <p>El robo de celulares se ha convertido en uno de los delitos más recurrentes y también rentables de la última década en Colombia, dado que ese mercado ilegal ha movido al menos $830.000 millones al año.</p>
+
+         <p>A continuación, se muestran  unas cifras de robos de celular por año y departamento en Colombia: </p>
+
+
+        <div id="tooltip" height="50"></div>
+        <svg width="900" height="50"></svg>
+      </div>
+      <div class="col-md-3">
+         <img src="logo-facebook.png" width="100" height="100" alt="..">
+         <img src="twitter-old.png" width="85" height="85" alt="..">
+
+         <img src="hurto.jpg" alt="..">
+
+        <h3>Guia:</h3>
+        <p> - Esta visualización nos permite ver cuáles son los Departamentso con mas hurtos de celular.</p>
+        <p> - Puede serleccionar al Año para ver las estadisticas.</p>
+        <p> - El color del área depende del numero de hurtos. A continuación, una escala del color:</p>
+
+         <img src="Rango.JPG" width="200" height="200" alt="..">
+
+      </div>
+  </div>
+  <h1 ALIGN=center><b> Visualización.</b></h1>
+   <div class="container">
+      <label>Seleccione el Año:</label>
+        <select onchange="loadCircularHeatMap(value)">
+          <option value="2010">2010</option>
+          <option value="2011">2011</option>
+          <option value="2012">2012</option>
+          <option value="2013">2013</option>
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2018">2018</option>
+       </select>
+    </div>
+    <div id="chart">
+         
+       <script>  loadCircularHeatMap("2018");  </script>
+    </div>
+    <footer align="center" style="font-size: 12px;">
+            Gerardo Antonio Perez Clavijo<br>
+            Código: 20151406<br>
+            Correo: ga.perez@uniandes.edu.co<br>
+            Universidad de los Andes<br>
+            Maestría en Ingeniería de la Información
+  </footer>
+  </body>
+</html>
